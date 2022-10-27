@@ -9,6 +9,11 @@ just by rotating the sun.
 
 Renderer: Vulkan
 
+## Fork changes
+
+- Added a simple script featuring automatic day night cycling.
+- Added a basic character controller + simple level
+
 ## Screenshots
 
 ![Screenshot](screenshots/Midday.png)

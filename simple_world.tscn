@@ -1,8 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://d38w8c601pj3a"]
+[gd_scene load_steps=9 format=3 uid="uid://d38w8c601pj3a"]
 
-[ext_resource type="Script" path="res://CharacterBody3D.gd" id="1_fhf6i"]
 [ext_resource type="PackedScene" uid="uid://cff5uacv07nea" path="res://Sky.tscn" id="1_manso"]
 [ext_resource type="Script" path="res://sky.gd" id="2_a8hx8"]
+[ext_resource type="PackedScene" uid="uid://benhp8kk0n1df" path="res://player.tscn" id="3_bqflp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_58mbh"]
 albedo_color = Color(0.494118, 0.784314, 0.313726, 1)
@@ -16,12 +16,6 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 [sub_resource type="BoxMesh" id="BoxMesh_jregq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bohy5"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_lmj2e"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_6nqd0"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4qbme"]
 
 [node name="Simple_World" type="Node3D"]
 
@@ -112,19 +106,4 @@ mesh = SubResource("BoxMesh_jregq")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Box8/StaticBody3D"]
 shape = SubResource("BoxShape3D_bohy5")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15957, 0)
-script = ExtResource("1_fhf6i")
-
-[node name="Body" type="MeshInstance3D" parent="CharacterBody3D"]
-mesh = SubResource("CapsuleMesh_lmj2e")
-
-[node name="Nose" type="MeshInstance3D" parent="CharacterBody3D"]
-transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, 0, 0.741838, -0.452026)
-mesh = SubResource("CapsuleMesh_6nqd0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-shape = SubResource("CapsuleShape3D_4qbme")
-
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.87666, 0.481111, 0, -0.481111, 0.87666, 0, 1.89475, 1.16263)
+[node name="Player" parent="." instance=ExtResource("3_bqflp")]
