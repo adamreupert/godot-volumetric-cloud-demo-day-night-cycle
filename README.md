@@ -13,6 +13,7 @@ Renderer: Vulkan
 
 - Added a simple script featuring automatic day night cycling.
 - Added a basic character controller + simple level
+- Character controller is inspired from [Johnny Rouddro](https://www.youtube.com/watch?v=rgpcSJTTGoc)
 
 ## Screenshots
 
